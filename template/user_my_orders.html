@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+
+<head>
+	<title>Quality Fresh Meats Online-booking</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!--user profile-->
+								<a href="../my_profile" style="margin-right:15px;">
+									<img src="{%static 'images/user-profile.png' %}" height="30px" width="30px"></a>
+                                <!--//user profile-->
+								<!-- login -->
+								<a href="../home" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-out mr-2"></span>Logout</a>
+								<!-- //login -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1">
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="user_home">
+						<img src="{%static 'images/logo1.jpg' %}" alt="" class="img-fluid" height="350px" width="250px">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<label for="drop" class="toggle">Categories</label>
+						<input type="checkbox" id="drop" />
+						<ul class="menu">
+							<li><a href="../user_home">Home</a></li>
+							<li><a href="../user_category">Categories</a></li>
+<!--							<li><a class="drop-text" href="../user_offer">Offers</a></li>-->
+							<li class="nav-item "><a href="../cart" class="fa fa-shopping-cart">Cart</a></li>
+<!--    							<span class="badge badge-pill badge-danger">{% if data %}{{ data.count }}{% else %}0{% endif %}</span></a></li>-->
+							<li class="nav-item "><a href="../wishlist" class="fa fa-heart">Wishlist</a></li>
+<!--								<span class="badge badge-pill badge-danger">{% if wish %}{{ wish.count }}{% else %}0{% endif %}</span></a></li>-->
+							<li><a href="../user_feedback">Feedback</a></li>
+							<li><a href="../user_my_orders"><img src="{%static 'images/shopping-bag.png' %}" height="15px" width="15px"> My Orders</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+			</div>
+		</div>
+	</div>
+	<!-- //navigation -->
+	<!-- //header 2 -->
+
+	<!-- banner -->
+<!--	<div>-->
+<!--		<img src="{%static 'images/thank-you.jpeg' %}" height="400px;" width="1473px;">-->
+<!--	</div>-->
+	<!-- //banner -->
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../user_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">My Orders</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+	<!--message-->
+		{% if messages %}
+		<div class="container">
+			<div class="alert alert-success alert-dismissible messages">
+				<button type="button" class="close" data-dismiss="alert">🞭</button>
+				{% for message in messages %}
+					{{ message }}
+				{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+	<!--//message-->
+
+<!--order details-->
+
+	{% if not data %}
+		<img src="{%static 'images/empty_order.png' %}" style="margin-left:580px; margin-top:50px;"><br>
+		<a href="../user_category" class="btn btn-warning btn-lg" style="width:300px; margin-left:600px; margin-top:20px; color:white;">ORDER NOW</a>
+	{% else %}
+		<div class="map-full">
+			<div class="contact-box">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 mt-4">
+							<div class="heading-title text-center">
+								<h1>Order Details</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<mark style="color:red; background-color:light; margin-left:450px;">* NB : Order cancellation only for Cash On Delivery . No Return and refund available.</mark>
+		<div class="map-full">
+			<div class="contact-box">
+				<div class="container-fluid">
+					<table class="table table-stripped mt-5" border="2">
+						<thead>
+							<tr style="background-color:lightblue;">
+								<th><center>Order Id</center></th>
+								<th><center>UserName</center></th>
+								<th><center>Address</center></th>
+								<th><center>Contact</center></th>
+								<th><center>Email</center></th>
+								<th><center>Item</center></th>
+								<th><center>Name</center></th>
+								<th><center>Price</center></th>
+								<th><center>Payment Mode</center></th>
+								<th><center>Status</center></th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for i in data %}
+							<tr>
+								<td style="color:blue;">
+									<center>{{i.order_id}}<br>
+									<a href="{% url 'cancel_order' i.id %}" class="btn btn-danger fa fa-trash" style="margin-top:20px;"></a></center>
+								</td>
+								<td><center>{{i.customer.u_name}}</center></td>
+								<td><center>{{i.so_address}}</center></td>
+								<td><center>{{i.so_phone}}</center></td>
+								<td><center>{{i.so_email}}</center></td>
+								<td>
+									<center><img src="{{i.product.pro_img.url}}" height="90" width="90"></center></td>
+								<td><center>{{i.product.pro_name}}</center></td>
+								<td>
+									<center><p>Qty : {{i.quantity}}</p>
+										₹ {{i.total_price}}</center>
+								</td>
+								<td><center>{{i.payment_mode}}</center></td>
+								<td><center>{{i.status}}</center></td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+
+
+<!--//order details-->
+
+<!-- footer -->
+	<footer class="py-5" style="margin-top:50px;">
+		<div class="container py-xl-4">
+			<div class="row footer-top">
+				<div class="col-lg-4 footer-grid_section_1its footer-text">
+					<!-- logo -->
+					<h2>
+						<a class="logo text-wh" href="">
+							<img src="{%static 'images/logo.jpg' %}" height="200px" width="100px" alt="logo" class="img-fluid"><span>Quality</span> Meats
+						</a>
+					</h2>
+					<!-- //logo -->
+					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">Quality meats are characterized by their tenderness,
+						succulence, and superior flavor profile.</p>
+					<!-- social icons -->
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Contact Us</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Address : ABC Building, Kadavanthra, Cochin, Eranakulam, Kerala</p>
+						<p class="my-2">Phone : +91 9605932427</p>
+						<p>Email : <a href="mailto:baconbonanza.meatshop@gmail.com">baconbonanza.meatshop@gmail.com</a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3>Payment Method</h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="login"><img src="{%static 'images/cod_image.png' %}" alt="py1" height="25px" width="100px"></a>
+						</li>
+						<li>
+							<a href="login."><img src="{%static 'images/razorpay_image.png' %}" alt="py2" height="25px"></a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its">
+					<div class="footer-title">
+						<h3>Services</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Free Shipping</p>
+						<p>24/7 Support</p>
+						<p>Cash On Delivery & Online Payment Available</p>
+						<p>No Return/Refund Policies</p>
+						<p>Quality Assurance</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<!-- copyright -->
+	<div class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+
+</body>
+</html>

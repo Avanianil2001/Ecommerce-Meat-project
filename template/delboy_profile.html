@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+
+<head>
+	<title>User Profile</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+	<style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background-color: #000
+        }
+
+        .card {
+            width: 350px;
+            background-color: #efefef;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .image img {
+            transition: all 0.5s
+        }
+
+        .card:hover .image img {
+            transform: scale(1.5)
+        }
+
+        .btn {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        .idd {
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .idd1 {
+            font-size: 12px
+        }
+
+        .number {
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        .follow {
+            font-size: 12px;
+            font-weight: 500;
+            color: #444444
+        }
+
+        .btn1 {
+            height: 40px;
+            width: 150px;
+            border: none;
+            background-color: #000;
+            color: #aeaeae;
+            font-size: 15px
+        }
+
+        .text span {
+            font-size: 13px;
+            color: #545454;
+            font-weight: 500
+        }
+
+        .icons i {
+            font-size: 19px
+        }
+
+        hr .new1 {
+            border: 1px solid
+        }
+
+        .join {
+            font-size: 14px;
+            color: #a0a0a0;
+            font-weight: bold
+        }
+
+        .date {
+            background-color: #ccc
+        }
+	</style>
+
+</head>
+<body>
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2" style="margin-top:20px;">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../delboy_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Update Profile</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+<!--user profile-->
+    <div class="container  d-flex justify-content-center" style="margin-top:90px;">
+        <div class="card p-4">
+            <div class=" image d-flex flex-column justify-content-center align-items-center">
+				{% if user %}
+                <button class="btn btn-secondary">
+                    <img src="{{user.d_img.url}}" height="100" width="100" />
+                </button>
+                <span class="name mt-3">{{user.df_name}} {{dl_name}}</span>
+                <span class="idd">{{user.d_email}}</span>
+                <div class=" d-flex mt-2">
+					<button class="btn1 btn-dark"><a href="delboy_profile_update/{{user.id}}" style="color:gray;">Edit Profile</a></button>
+                </div>
+                <div class=" px-2 rounded mt-4 ">
+                    <span>User Name: {{user.d_username}}</span>
+                </div>
+				{% endif %}
+            </div>
+        </div>
+    </div>
+<!--//user profile-->
+
+	<!-- copyright -->
+	<div style="margin-top:1000px;" class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+</html>

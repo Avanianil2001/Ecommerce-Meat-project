@@ -1,0 +1,636 @@
+ <!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+<head>
+	<title>Quality Fresh Meats Online-booking</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
+	<!-- css slider -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+	<style>
+		h3 {
+			font-size: 0.7em;
+			letter-spacing: 1.2px;
+			color: $color-secondary;
+		}
+
+		img {
+					max-width: 100%;
+					filter: drop-shadow(1px 1px 3px $color-secondary);
+				}
+
+		/* ----- Product Section ----- */
+		.product {
+			display: grid;
+			grid-template-columns: 0.9fr 1fr;
+			margin: auto;
+			padding: 2.5em 0;
+			min-width: 600px;
+			background-color: white;
+			border-radius: 5px;
+		}
+
+		/* ----- Photo Section ----- */
+		.product__photo {
+			position: relative;
+		}
+
+		.photo-container {
+			position: absolute;
+			left: -2.5em;
+			display: grid;
+			grid-template-rows: 1fr;
+			width: 100%;
+			height: 100%;
+			border-radius: 6px;
+			box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+		}
+
+		.photo-main {
+			border-radius: 6px 6px 0 0;
+			background-color: #9be010;
+			background: radial-gradient(#e5f89e, #96e001);
+
+			.controls {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.8em;
+				color: #fff;
+
+				i {
+					cursor: pointer;
+				}
+			}
+
+			img {
+				position: absolute;
+				left: -3.5em;
+				top: 2em;
+				max-width: 110%;
+				filter: saturate(150%) contrast(120%) hue-rotate(10deg)
+					drop-shadow(1px 20px 10px rgba(0, 0, 0, 0.3));
+			}
+		}
+
+		.photo-album {
+			padding: 0.7em 1em;
+			border-radius: 0 0 6px 6px;
+			background-color: #fff;
+
+			ul {
+				display: flex;
+				justify-content: space-around;
+			}
+
+			li {
+				float: left;
+				width: 55px;
+				height: 55px;
+				padding: 7px;
+				border: 1px solid $color-secondary;
+				border-radius: 3px;
+			}
+		}
+
+		/* ----- Informations Section ----- */
+		.product__info {
+			padding: 0.8em 0;
+		}
+
+		.title {
+			h1 {
+				margin-bottom: 0.1em;
+				color: $color-primary;
+				font-size: 1.5em;
+				font-weight: 900;
+			}
+
+			span {
+				font-size: 0.7em;
+				color: $color-secondary;
+			}
+		}
+
+		.price {
+			margin: 1.5em 0;
+			color: $color-highlight;
+			font-size: 1.2em;
+
+			span {
+				padding-left: 0.15em;
+				font-size: 2.9em;
+			}
+		}
+
+		.variant {
+			overflow: auto;
+
+			h3 {
+				margin-bottom: 1.1em;
+			}
+
+			li {
+				float: left;
+				width: 35px;
+				height: 35px;
+				padding: 3px;
+				border: 1px solid transparent;
+				border-radius: 3px;
+				cursor: pointer;
+
+				&:first-child,
+				&:hover {
+					border: 1px solid $color-secondary;
+				}
+			}
+
+			li:not(:first-child) {
+				margin-left: 0.1em;
+			}
+		}
+
+		.description {
+			clear: left;
+			margin: 2em 0;
+
+			h3 {
+				margin-bottom: 1em;
+			}
+
+			ul {
+				font-size: 0.8em;
+				list-style: disc;
+				margin-left: 1em;
+			}
+
+			li {
+				text-indent: -0.6em;
+				margin-bottom: 0.5em;
+			}
+		}
+
+		.buy--btn {
+			padding: 1.5em 3.1em;
+			border: none;
+			border-radius: 7px;
+			font-size: 0.8em;
+			font-weight: 700;
+			letter-spacing: 1.3px;
+			color: #fff;
+			background-color: $color-highlight;
+			box-shadow: 2px 2px 25px -7px $color-primary;
+			cursor: pointer;
+
+			&:active {
+				transform: scale(0.97);
+			}
+		}
+
+		/* ----- Footer Section ----- */
+		footer {
+			padding: 1em;
+			text-align: center;
+			color: #fff;
+
+			a {
+				color: $color-primary;
+
+				&:hover {
+					color: $color-highlight;
+				}
+			}
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!-- login -->
+								<a href="login" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-in mr-2"></span>Login</a>
+								<!-- //login -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1">
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="">
+						<img style="padding-left:5px;" src="{%static 'images/logo1.jpg' %}" height="350px" width="250px" alt="logo1" class="img-fluid">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<label for="drop" class="toggle">Categories</label>
+						<input type="checkbox" id="drop" />
+						<ul class="menu">
+							<li><a href="">Home</a></li>
+							<li><a href="about">About Us</a></li>
+<!--							<li><a class="drop-text" href="offers">Special Offers</a></li>-->
+							<li><a href="category">Categories</a></li>
+							<li><a href="contact">Contact / Feedback</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+			</div>
+		</div>
+	</div>
+	<!-- //navigation -->
+	<!-- //header 2 -->
+
+	<!-- banner -->
+	<div class="baneer-w3ls" style="margin-">
+		<div class="row no-gutters">
+			<div class="col-xl-5 col-lg-6">
+				<div class="banner-left-w3">
+					<div class="container">
+						<div class="banner-info_agile_w3ls">
+							<h5>Quality Fresh Meats</h5>
+							<h3 class="text-da mb-4">This Season<span><br>LET'S MEAT UP!</span> </h3>
+							<p>We are now open and ready to serve you the best meat in town!
+							</p>
+							<a href="about" class="button-w3ls active mt-5">Read More
+								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+							</a>
+							<a href="login" class="button-w3ls mt-5 ml-2">Order Now
+								<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xl-7 col-lg-6 callbacks_container">
+				<!-- banner slider -->
+				<div class="csslider infinity" id="slider1">
+					<input type="radio" name="slides" checked="checked" id="slides_1" />
+					<input type="radio" name="slides" id="slides_2" />
+					<input type="radio" name="slides" id="slides_3" />
+					<ul class="banner_slide_bg">
+						<li>
+							<div class="banner-top1">
+								<img src="{%static 'images/chicken-1.jpeg' %}" height="700px;" width="650px;" style="background-repeat:no-repeat; margin-left:85px;">
+							</div>
+						</li>
+						<li>
+							<div class="banner-top2">
+								<img src="{%static 'images/chicken-Drumsticks.jpeg' %}" height="500px;" width="600px;" style="background-repeat:no-repeat; margin-left:85px;">
+							</div>
+
+						</li>
+						<li>
+							<div class="banner-top3">
+								<img src="{%static 'images/chicken-wings.png' %}" height="500px;" width="600px;" style="background-repeat:no-repeat; margin-left:95px;">
+							</div>
+						</li>
+					</ul>
+					<div class="arrows">
+						<label for="slides_1"></label>
+						<label for="slides_2"></label>
+						<label for="slides_3"></label>
+					</div>
+					<div class="navigation">
+						<div>
+							<label for="slides_1"></label>
+							<label for="slides_2"></label>
+							<label for="slides_3"></label>
+						</div>
+					</div>
+				</div>
+				<!-- //banner slider -->
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<div class="clearfix"></div>
+
+	<!-- about -->
+	<div class="about-bottom">
+		<div class="row no-gutters">
+			<div class="col-lg-5 col-md-6 about">
+				<img src="{%static 'images/bg-1.jpg' %}" height="550px" width="625px">
+			</div>
+			<div class="col-lg-7 col-md-6 about-right-w3 text-right py-md-5">
+				<div class="right-space py-xl-5 py-lg-3">
+					<div class="title-section mb-4">
+						<p class="w3ls-title-sub">About Us</p>
+						<h3 class="w3ls-title">Welcome to <span>Meat Shop</span></h3>
+					</div>
+					<p class="about-text" >Welcome to our meat shop, where quality and freshness meet with every cut.</p>
+						<p>Nestled in the heart of town, our shop prides itself on offering premium cuts of meat
+						sourced from local farms known for their sustainable and humane practices.</p>
+						<p>From succulent steaks to tender roasts, our diverse selection caters to every culinary desire.</p>
+					<a href="about" class="button-w3ls mt-5">Read More
+						<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+
+	<!-- specials -->
+	<section class="blog_w3ls py-5">
+		<div class="container pb-xl-5 pb-lg-3">
+			<div class="title-section text-center mb-md-5 mb-4">
+				<p class="w3ls-title-sub">Tasty</p>
+				<h3 class="w3ls-title">Our <span>Special</span></h3>
+			</div>
+			<div class="row">
+				<!-- blog grid -->
+				<section class="product">
+					<div class="product__photo">
+						<div class="photo-container">
+							<div class="photo-main">
+								<img src="{%static 'images/chicken-home.jpg' %}" alt="chicken image" style="margin-top:70px; width:950px;">
+							</div>
+
+						</div>
+					</div>
+					<div class="product__info">
+						<div class="title">
+							<h1>CHICKEN FRESH MEAT</h1>
+							<span>Chicken meat is a versatile protein enjoyed worldwide for its lean texture and mild flavor,
+								<br>making it a staple ingredient in countless culinary dishes.</span>
+						</div>
+						<div class="price">
+							<h2>Varieties of cuttings</h2>
+						</div>
+						<div class="list">
+							<ul>
+								<li>Whole Chicken</li>
+								<li>Drumsticks</li>
+								<li>Quartered Chicken</li>
+								<li>Bone-in Chicken</li>
+							</ul>
+						</div>
+						<div class="description">
+							<h3>BENEFITS</h3>
+							<ul>
+								<li> High-Quality Protein Source</li>
+								<li>Rich in Essential Nutrients</li>
+								<li>Low in Fat (Especially White Meat)</li>
+								<li>Easy to Digest</li>
+							</ul>
+						</div>
+						<a href="category" ><button class="buy--btn btn-success">View Product</button></a>
+					</div>
+				</section>
+				<!-- //blog grid -->
+			</div>
+		</div>
+	</section>
+	<!-- //specials -->
+
+	<!-- two grids -->
+	<section class="offer pt-lg-3">
+
+		<div class="row no-gutters">
+			<div class="col-md-6 p-0">
+				<div class="blog-sec-w3">
+					<div class="text-blog-w3 text-center p-2">
+						<h4 class="text-wh mb-3"><a href="category">Super Quality Collection</a></h4>
+						<p class="text-li">The butcher proudly displayed his super quality collection of meat,
+							showcasing prime cuts of chicken meats are cut and cleaned,
+							and tender chicken breasts.</p>
+						<a href="login" class="button-w3ls active mt-5">Order Now
+							<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-6 p-0">
+				<div class="blog-sec-w3 blog-sec-w3-2">
+					<div class="text-blog-w3 text-center p-2">
+						<h4 class="text-wh mb-3"><a href="category">Organic Best & Fresh Meat</a></h4>
+						<p class="text-li">High-quality, locally-sourced organic and fresh meat.
+							Premium organic, top-quality, and freshly sourced meat.</p>
+						<a href="login" class="button-w3ls active mt-5">Order Now
+							<span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- //two grids -->
+
+	<!-- services -->
+	<section class="middle py-5" id="services">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section text-center mb-md-5 mb-4">
+				<p class="w3ls-title-sub">Our Work</p>
+				<h3 class="w3ls-title mb-3">Excellent <span>Services</span></h3>
+			</div>
+			<div class="row grids-w3 py-xl-5 py-lg-4 pt-lg-0 pt-4">
+				<div class="col-lg-5 w3pvt-lauits_banner_bottom_left">
+					<div class="row">
+						<div class="col-8 wthree_banner_bottom_grid_right text-right">
+							<h4 class="mb-3">Free Shipping</h4>
+							<p>Why pay for shipping? Simplify mealtime with free shipping on all meat orders, every day.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-2 w3pvt-lauits_banner_bottom_left">
+
+				</div>
+				<div class="col-lg-5 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
+					<div class="row">
+						<div class="col-8 wthree_banner_bottom_grid_right" style="margin-left:160px;">
+							<h4 class="mb-3">Quality Assurance</h4>
+							<p>Customers expect high-quality, fresh meats when ordering online. This online meat shop prioritize quality by sourcing our products from trusted farms and suppliers.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row grids-w3 py-xl-5 py-lg-4 mt-lg-0 mt-4">
+				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left">
+					<div class="row">
+						<div class="col-8 wthree_banner_bottom_grid_right text-right pl-lg-0">
+							<h4 class="mb-3">Online Order</h4>
+							<p>We provide online order with high quality products. But no return/refund policies.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left pr-0">
+
+				</div>
+				<div class="col-lg-4 w3pvt-lauits_banner_bottom_left mt-lg-0 mt-4">
+					<div class="row">
+						<div class="col-8 wthree_banner_bottom_grid_right pr-lg-0" style="margin-left:130px;">
+							<h4 class="mb-3">24/7 Support</h4>
+							<p>Our dedicated customer service team is here to assist you around the clock, ensuring prompt responses to your inquiries, order tracking, and resolution of any concerns or issues you may encounter.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="position:absolute;right:500px;bottom:200px;">
+			<img src="{%static 'images/delivery-boy-scooter.jpg' %}" alt="delivery-boy" class="img-fluid" height="500" width="500">
+		</div>
+	</section>
+	<!-- //services -->
+
+	<!-- newsletter -->
+	<section class="subscribe-main py-5">
+		<div class="container py-xl-5 py-3">
+			<div class="row pb-lg-4 pt-lg-5">
+				<div class="col-lg-6 col-md-9 text-center">
+					<h3 class="w3ls-title mb-2">Subscribe to Newsletter</h3>
+					<p class="mb-xl-5 mb-4">Free Delivery on your every single order!</p>
+					<form action="#" method="post" class="d-flex newsletter-info">
+						<input type="email" name="email" placeholder="Enter your Email..." required="">
+						<button type="submit"><a href="register" style="color:white;">Submit</a></button>
+					</form>
+				</div>
+				<div class="col-lg-6 col-md-3">
+
+				</div>
+			</div>
+			<div>
+				<img src="{%static 'images/chicken-image.jpg' %}" style="margin-bottom:25px; margin-right:100px;" height="100px" width="600px" alt="sub1" class="img-fluid sub-img">
+			</div>
+		</div>
+	</section>
+	<!-- //newsletter -->
+
+	<!-- footer -->
+	<footer class="py-5">
+		<div class="container py-xl-4">
+			<div class="row footer-top">
+				<div class="col-lg-4 footer-grid_section_1its footer-text">
+					<!-- logo -->
+					<h2>
+						<a class="logo text-wh" href="">
+							<img src="{%static 'images/logo.jpg' %}" height="200px" width="100px" alt="logo" class="img-fluid"><span>Quality</span> Meats
+						</a>
+					</h2>
+					<!-- //logo -->
+					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">Quality meats are characterized by their tenderness,
+						succulence, and superior flavor profile.</p>
+					<!-- social icons -->
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Contact Us</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Address : ABC Building, Kadavanthra, Cochin, Eranakulam, Kerala</p>
+						<p class="my-2">Phone : +91 9605932427</p>
+						<p>Email : <a href="mailto:baconbonanza.meatshop@gmail.com">baconbonanza.meatshop@gmail.comm</a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3>Payment Method</h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="login"><img src="{%static 'images/cod_image.png' %}" alt="py1" height="25px" width="100px"></a>
+						</li>
+						<li>
+							<a href="login."><img src="{%static 'images/razorpay_image.png' %}" alt="py2" height="25px"></a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its">
+					<div class="footer-title">
+						<h3>Services</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Free Shipping</p>
+						<p>24/7 Support</p>
+						<p>Cash On Delivery & Online Payment Available</p>
+						<p>No Return/Refund Policies</p>
+						<p>Quality Assurance</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<!-- copyright -->
+	<div class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+
+</html>

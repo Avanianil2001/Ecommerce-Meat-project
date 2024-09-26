@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>view products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
+	<!-- css slider -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+    <!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!-- login -->
+								<a href="../home" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-out mr-2"></span>Logout</a>
+								<!-- //login -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1" >
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="">
+						<img style="padding-left:5px;" src="{%static 'images/logo1.jpg' %}" height="350px" width="250px" alt="logo1" class="img-fluid">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<ul class="menu">
+							<li><a href="../admin_home">Home</a></li>
+							<li><a href="../add_product">Add Product</a></li>
+							<li><a href="../add_employee">Add Employee</a></li>
+<!--							<li>-->
+<!--								&lt;!&ndash; Second Tier Drop Down &ndash;&gt;-->
+<!--								<label for="drop-1" class="toggle toogle-2">Offer<span class="fa fa-angle-down" aria-hidden="true"></span></label>-->
+<!--								<a href="#pages">Offer<span class="fa fa-angle-down" aria-hidden="true"></span></a>-->
+<!--								<input type="checkbox" id="drop-1" />-->
+<!--								<ul>-->
+<!--								<li><a href="add_offer">Add Offer Details</a></li>-->
+<!--								<li><a href="view_offer">View Offer Details</a></li>-->
+<!--								</ul>-->
+<!--							</li>-->
+							<li>
+								<!-- First Tier Drop Down -->
+								<label for="drop-3" class="toggle toogle-2">View Details<span class="fa fa-angle-down"
+																							  aria-hidden="true"></span></label>
+								<a href="#pages">View Details<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+								<input type="checkbox" id="drop-3" />
+								<ul>
+									<li><a class="drop-text" href="../view_user">View Users</a></li>
+									<li><a class="drop-text" href="../view_employee">View employees</a></li>
+									<li><a class="drop-text" href="../view_delivery">View Delivery Persons</a></li>
+								</ul>
+							<li><a href="../view_product">Product Details</a></li>
+							<li><a href="../view_order">Order Details</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav-->
+			</div>
+		</div>
+	</div>
+    <!-- //navigation -->
+	<!-- //header2 -->
+
+	<!-- banner -->
+	<div>
+		<img src="{%static 'images/admin-bg-2.jpeg' %}" height="300px" width="1519px">
+	</div>
+	<!-- //banner -->
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../admin_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">View Product Details</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+<!-- message -->
+	{% if messages %}
+	<div class="container">
+		<div class="alert alert-success alert-dismissible messages">
+			{% for message in messages %}
+				<button type="button" class="close" data-dismiss="alert">🞭</button>
+			 {{message}}
+	  	</div>
+		 {% endfor %}
+	</div>
+	{% endif %}
+<!-- //message -->
+
+<div class="map-full">
+	<div class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mt-4">
+					<div class="heading-title text-center">
+						<h1 style="margin-left:50px;">Product Details</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--product details-->
+<div class="map-full">
+	<div class="contact-box">
+        <div class="container">
+			<table class="table table-stripped mt-5">
+				<thead>
+				<tr>
+					<th><center>Product Image</center></th>
+					<th><center>Product Name</center></th>
+					<th><center>Description</center></th>
+					<th><center>Quantity</center></th>
+					<th><center>Price</center></th>
+		  		</tr>
+		  		</thead>
+				<tbody>
+				{% for i in udp %}
+				<tr>
+					<td><center><img src="{{i.pro_img.url}}" height="150" width="150"></center></td>
+					<td><center>{{i.pro_name}}</center></td>
+					<td><center>{{i.description}}</center></td>
+					<td><center>{{i.quantity}}</center></td>
+					<td ><center>₹ {{i.price}} (per 1kg)</center></td>
+
+				</tr>
+    			{% endfor %}
+    			</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!--//product details-->
+
+
+<!-- copyright -->
+<div class="cpy-right text-center py-3">
+	<p>© 2024 Quality Meats. All rights reserved | Design by
+		<a href=""> Avani.V</a>
+	</p>
+</div>
+<!-- //copyright -->
+<!-- move top icon -->
+<a href="#home" class="move-top text-center">
+	<span class="fa fa-level-up" aria-hidden="true"></span>
+</a>
+<!-- //move top icon -->
+
+</body>
+</html>

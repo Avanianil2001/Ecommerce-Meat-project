@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+
+<head>
+	<title>Quality Fresh Meats Online-booking</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+	<style>
+
+		*{margin: 0;padding: 0;-webkit-font-smoothing: antialiased;-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;text-shadow: rgba(0,0,0,.01) 0 0 1px}
+
+		#body1{font-family: 'Rubik', sans-serif;font-size: 14px;font-weight: 400;background: #E0E0E0;color: #000000}
+
+		ul{list-style: none;margin-bottom: 0px}
+
+		.button{display: inline-block;background: #0e8ce4;border-radius: 5px;height: 48px;-webkit-transition: all 200ms ease;-moz-transition: all 200ms ease;-ms-transition: all 200ms ease;-o-transition: all 200ms ease;transition: all 200ms ease}
+
+		.button a{display: block;font-size: 18px;font-weight: 400;line-height: 48px;color: #FFFFFF;padding-left: 35px;padding-right: 35px}
+
+		.button:hover{opacity: 0.8}
+
+		.cart_section{width: 100%;padding-top: 93px;padding-bottom: 111px}
+
+		.cart_title{font-size: 30px;font-weight: 500}
+
+		.cart_items{margin-top: 8px}
+
+		.cart_list{border: solid 1px #e8e8e8;box-shadow: 0px 1px 5px rgba(0,0,0,0.1);background-color: #fff}
+
+		.cart_item{width: 100%;padding: 15px;padding-right: 46px}
+
+		.cart_item_image{width: 133px;height: 133px;float: left}
+
+		.cart_item_image img{max-width: 100%}
+
+		.cart_item_info{width: calc(100% - 133px);float: left;padding-top: 18px}
+
+		.cart_item_name{margin-left: 7.53%}
+
+		.cart_item_title{font-size: 14px;font-weight: 400;color: rgba(0,0,0,0.5)}
+
+		.cart_item_text{font-size: 18px;margin-top: 35px}
+
+		.cart_item_text span{display: inline-block;width: 20px;height: 20px;border-radius: 50%;margin-right: 11px;-webkit-transform: translateY(4px);-moz-transform: translateY(4px);-ms-transform: translateY(4px);-o-transform: translateY(4px);transform: translateY(4px)}
+
+		.cart_item_price{text-align: right}
+
+		.cart_item_total{text-align: right}
+
+		.order_total{width: 100%;height: 60px;margin-top: 30px;border: solid 1px #e8e8e8;box-shadow: 0px 1px 5px rgba(0,0,0,0.1);padding-right: 46px;padding-left: 15px;background-color: #fff}
+
+		.order_total_title{display: inline-block;font-size: 14px;color: rgba(0,0,0,0.5);line-height: 60px}
+
+		.order_total_amount{display: inline-block;font-size: 18px;font-weight: 500;margin-left: 26px;line-height: 60px}
+
+		.cart_buttons{margin-top: 60px;text-align: right}
+
+		.cart_button_clear{display: inline-block;border: none;font-size: 18px;font-weight: 400;line-height: 48px;color: rgba(0,0,0,0.5);background: #FFFFFF;border: solid 1px #b2b2b2;padding-left: 35px;padding-right: 35px;outline: none;cursor: pointer;margin-right: 26px}
+
+		.cart_button_clear:hover{border-color: #0e8ce4;color: #0e8ce4}
+
+		.cart_button_checkout{display: inline-block;border: none;font-size: 18px;font-weight: 400;line-height: 48px;color: #FFFFFF;padding-left: 35px;padding-right: 35px;outline: none;cursor: pointer;vertical-align: top}
+
+	</style>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+	<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!--user profile-->
+								<a href="../my_profile" style="margin-right:15px;">
+									<img src="{%static 'images/user-profile.png' %}" height="30px" width="30px"></a>
+                                <!--//user profile-->
+								<!-- logout -->
+								<a href="../home" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-out mr-2"></span>Logout</a>
+								<!-- //logout -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1">
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="../user_home">
+						<img src="{%static 'images/logo1.jpg' %}" alt="logo" class="img-fluid" height="350px" width="250px">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<label for="drop" class="toggle">Categories</label>
+						<input type="checkbox" id="drop" />
+						<ul class="menu">
+							<li><a href="../user_home">Home</a></li>
+							<li><a href="../user_category">Categories</a></li>
+<!--							<li><a class="drop-text" href="../user_offer">Offers</a></li>-->
+							<li class="nav-item "><a href="../cart" class="fa fa-shopping-cart">Cart</a></li>
+<!--    							<span class="badge badge-pill badge-danger">{% if data %}{{ data.count }}{% else %}0{% endif %}</span></a></li>-->
+							<li class="nav-item "><a href="../wishlist" class="fa fa-heart">Wishlist</a></li>
+<!--								<span class="badge badge-pill badge-danger">{% if d %}{{ d.count }}{% else %}0{% endif %}</span></a></li>-->
+							<li><a href="../user_feedback">Feedback</a></li>
+							<li><a href="user_my_orders"><img src="{%static 'images/shopping-bag.png' %}" height="15px" width="15px"> My Orders</a></li>
+
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+			</div>
+		</div>
+	</div>
+	<!-- //navigation -->
+	<!-- //header 2 -->
+
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../user_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Cart</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+<!--cart details-->
+
+	<ul>
+		{% block nav %}
+		<li class="nav-item"><a class="nav-link" href="../uhome">Home</a></li>
+		<li class="nav-item"><a class="nav-link" href="../book_details">Booking Details</a></li>
+		<li class="nav-item"><a class="nav-link" href="../my_profile">Profile</a></li>
+        <li class="nav-item "><a href="cart">
+			<i class="fa fa-shopping-cart fa-2x"></i>
+			<span class="badge badge-pill badge-danger">{% if d1 %}{{ d1.count }}{% else %}0{% endif %}</span></a>
+		</li>
+		<li class="nav-item"><a class="nav-link" href="../user_logout">Logout</a></li>
+		{% endblock nav %}
+	</ul>
+	<ul>
+		{% block nav %}
+		<li><a href="../user_home">Home</a></li>
+		<li><a href="user_category">Categories</a></li>
+<!--		<li><a class="drop-text" href="../user_offer">Offers</a></li>-->
+		<li class="nav-item "><a href="../cart" class="fa fa-shopping-cart">Cart
+			<span class="badge badge-pill badge-danger">{% if data %}{{ data.count }}{% else %}0{% endif %}</span></a></li>
+		<li class="nav-item "><a href="../wishlist" class="fa fa-heart">Wishlist
+			<span class="badge badge-pill badge-danger">{% if l %}{{ l.count }}{% else %}0{% endif %}</span></a></li>
+		<li><a href="../user_feedback">Feedback</a></li>
+		{% endblock nav %}
+	</ul>
+
+
+	{% endblock body %}
+
+<!--//cart details-->
+
+	<!-- footer -->
+	<footer class="py-5" style="margin-top:100px;">
+		<div class="container py-xl-4">
+			<div class="row footer-top">
+				<div class="col-lg-4 footer-grid_section_1its footer-text">
+					<!-- logo -->
+					<h2>
+						<a class="logo text-wh" href="home">
+							<img src="{%static 'images/logo.jpg' %}" alt="logo" height="200px" width="100px" class="img-fluid"><span>Quality</span> Meats
+						</a>
+					</h2>
+					<!-- //logo -->
+					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">Quality meats are characterized by their tenderness,
+						succulence, and superior flavor profile.</p>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Contact Us</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Address : ABC Building, Kadavanthra, Cochin, Eranakulam, Kerala</p>
+						<p class="my-2">Phone : +91 9605932427</p>
+						<p>Email : <a href="mailto:baconbonanza.meatshop@gmail.com">baconbonanza.meatshop@gmail.com</a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3>Payment Method</h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="login"><img src="{%static 'images/pay-1.png' %}" alt="py1" height="25px"></a>
+						</li>
+						<li>
+							<a href="login"><img src="{%static 'images/pay-2.png' %}" alt="py2" height="25px"></a>
+						</li>
+						<li>
+							<a href="login"><img src="{%static 'images/pay-3.png' %}" alt="py3" height="25px"></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its">
+					<div class="footer-title">
+						<h3>Request Info</h3>
+					</div>
+					<div class="info-form-right mt-4 p-0">
+						<form action="#" method="post">
+							<div class="row">
+								<div class="col-lg-6 form-group mb-2 pr-lg-1">
+									<input type="text" class="form-control" name="Name" placeholder="Name" required="">
+								</div>
+								<div class="col-lg-6 form-group mb-2 pl-lg-1">
+									<input type="text" class="form-control" name="Phone" placeholder="Phone"
+										required="">
+								</div>
+							</div>
+							<div class="form-group mb-2">
+								<input type="email" class="form-control" name="Email" placeholder="Email" required="">
+							</div>
+							<div class="form-group mb-2">
+								<textarea name="Comment" class="form-control" placeholder="Comment"
+									required=""></textarea>
+							</div>
+							<button type="submit" class="btn submit-contact ml-auto">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<!-- copyright -->
+	<div class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+
+<head>
+	<title>User Profile</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+	<script src="{%static 'js/city.js' %}"></script>
+
+	<style>
+		body{
+            margin-top:20px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;
+        }
+        .main-body {
+            padding: 15px;
+        }
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0,0,0,.125);
+            border-radius: .25rem;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+
+        .gutters-sm>.col, .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        .mb-3, .my-3 {
+            margin-bottom: 1rem!important;
+        }
+
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+        .h-100 {
+            height: 100%!important;
+        }
+        .shadow-none {
+            box-shadow: none!important;
+        }
+	</style>
+
+</head>
+
+<body>
+	<div class="breadcrumb-agile bg-light py-2" style="margin-top:20px;">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../user_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Update Profile</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+    <!--update-user_profile-->
+    <div class="container">
+        <div class="main-body">
+            <form action="../delboy_profile_update/{{d.id}}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex flex-column align-items-center text-center">
+                                    <img src="{{d.d_img.url}}" alt="Admin" class="rounded-circle" width="150">
+                                    <div class="mt-3">
+                                        <h4>{{d.df_name}} {{d.dl_name}}</h4>
+                                        <p class="text-secondary mb-1">{{d.d_email}}</p>
+                                        <p class="text-muted font-size-sm">{{d.d_phno}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">First Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="text" class="form-control" placeholder="" name="dfname" value="{{d.df_name}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Last Name</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="text" class="form-control" placeholder="" name="dlname" value="{{d.dl_name}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Email</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="text" class="form-control" placeholder="" name="demail" value="{{d.d_email}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Phone</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="text" class="form-control" placeholder="" name="dnmbr" value="{{d.d_phno}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                      <h6 class="mb-0">Address</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="text" class="form-control" placeholder="" name="dadrss" value="{{d.d_adrs}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                      <h6 class="mb-0">Image</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="file" class="form-control" placeholder="" name="dimg" value="{{d.d_img.url}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                      <h6 class="mb-0">Biodata</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="file" class="form-control" placeholder="" name="dbio" value="{{d.d_bio.url}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                      <h6 class="mb-0">Licence</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary"><input type="file" class="form-control" placeholder="" name="dlcnc" value="{{d.d_lcnc}}"></div>
+                                </div><hr>
+                                <div class="row">
+                                    <div class="mt-3 text-center" style="margin-left:300px">
+                                        <button class="btn btn-info profile-button" type="submit">Save Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+	<!--//update-user_profile-->
+
+	<!-- copyright -->
+	<div style="margin-top:200px;" class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container rounded bg-white mt-5 mb-6">-->
+<!--		<form action="../user_profile_update/{{d.id}}" method="post" enctype="multipart/form-data">-->
+<!--			{% csrf_token %}-->
+<!--			<div class="row">-->
+<!--				<div class="col-md-5 border-right">-->
+<!--					<div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" name="user_img" src="{{d.u_img.url}}">-->
+<!--						<span class="font-weight-bold">{{d.u_name}}</span>-->
+<!--						<span class="text-black-50">{{d.email}}</span>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-md-5 border-right">-->
+<!--					<div class="p-3 py-5">-->
+<!--						<div class="d-flex justify-content-between align-items-center mb-3">-->
+<!--							<h4 class="text-right">Profile Settings</h4>-->
+<!--						</div>-->
+<!--						<div class="row mt-2">-->
+<!--							<div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="" name="name" value="{{d.u_name}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="" name="nmbr" value="{{d.u_phno}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-12"><label class="labels">Address</label><input type="text" class="form-control" placeholder="" name="adrss" value="{{d.u_address}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="" name="email" value="{{d.email}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-6"><label class="labels">District</label><input type="text" class="form-control" placeholder="" name="udistrict" value="{{d.u_district}}"></div>-->
+<!--							<div class="col-md-6"><label class="labels">City</label><input type="text" class="form-control" placeholder="" name="ucity" value="{{d.u_city}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-12"><label class="labels">Pincode</label><input type="number" class="form-control" placeholder="" name="upincode" value="{{d.u_pincode}}"></div>-->
+<!--						</div>-->
+<!--						<div class="row mt-3">-->
+<!--							<div class="col-md-12"><label class="labels">Image</label><input type="file" name="user_img" value="" class="form-control"></div>-->
+<!--													<div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Update</button></div>-->
+
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</form>-->
+<!--	</div>-->

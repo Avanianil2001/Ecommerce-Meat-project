@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+
+<head>
+	<title>User Profile</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+	<script src="{%static 'js/city.js' %}"></script>
+
+</head>
+
+<body>
+    <!--page details-->
+    <div class="breadcrumb-agile bg-light py-2" style="margin-top:20px;">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="../user_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Change Password</li>
+			<li style="margin-left:1100px;">
+				<a href="../home" class="btn login-button-2 text-uppercase" style="color:white;">
+					<span class="fa fa-sign-out mr-2"></span>Logout</a>
+			</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+<!--chane password function-->
+    <div class="site-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="h3 mb-5 text-black">Change Password</h2>
+                </div>
+                <div class="col-md-12">
+                    <form action="{% url 'change' %}" method="post">
+                        {% csrf_token %}
+                        <div class="p-3 p-lg-5 border">
+                            <div class="form-group row">
+                                <div class="col-md-12">
+                                    <label class="text-black">Old Password<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="oldpass">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label class="text-black">New Password <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="newpass">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="text-black">Repeat Password <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="repass">
+                                </div>
+                            </div>
+
+                            {% for msg in messages %}
+                                <div class="group" style="text-align: center;">
+                                    <label class="label" style="color: red;">{{msg}}</label>
+                                </div>
+                            {% endfor %}
+
+                            <div class="form-group row">
+                                <div class="col-lg-12">
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Change Password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--//change password function-->
+
+
+<!-- copyright -->
+	<div style="margin-top:200px;" class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+</html>

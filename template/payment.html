@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* Customize Razorpay button */
+        .razorpay-payment-button {
+            background-color: #F37254;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            outline: none;
+            width: 100%;
+            max-width: 200px;
+            margin-top: 20px;
+        }
+
+        .razorpay-payment-button:hover {
+            background-color: #e3644f;
+        }
+
+        /* Hidden input field */
+        input[type="hidden"] {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<form action="../success" method="POST">
+    {% csrf_token %}
+    <h1>PAYMENT CONFORMATION</h1>
+    <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_SROSnyInFv81S4"
+    data-amount="{{amount}}"
+    data-currency="INR"
+    data-order_id="{{payment.id}}"
+    data-buttontext="PAY WITH RAZORPAY"
+    data-name="django payment"
+    data-description="This is a test payment"
+    data-image="https://example.com/logo.jpg"
+    data-prefill.name="Gaurav Kumar"
+    data-prefill.email="django@test.com"
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+</body>
+</html>

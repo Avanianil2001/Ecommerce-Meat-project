@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Person Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link href="{% static 'css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="home">
+        <div class="top-bar py-2 border-bottom">
+            <div class="container">
+                <div class="row middle-flex">
+                    <div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+                        <div class="row">
+                            <div class="col-xl-3 col-6 header-top_w3layouts">
+                                <p class="text-da"><span class="fa fa-map-marker mr-2"></span>Cochin, Kerala</p>
+                            </div>
+                            <div class="col-xl-3 col-6 header-top_w3layouts">
+                                <p class="text-da"><span class="fa fa-phone mr-2"></span>+91 9605932427</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+                        <div class="row middle-flex">
+                            <div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+                                <a href="del_profile" style="margin-right:15px;">
+                                    <img src="{% static 'images/user-profile.png' %}" height="30px" width="30px">
+                                </a>
+                                <a href="home" class="btn login-button-2 text-uppercase text-wh">
+                                    <span class="fa fa-sign-in mr-2"></span>Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="main-top py-1">
+        <div class="container">
+            <div class="nav-content">
+                <h1><a id="logo" class="logo" href="">
+                    <img style="padding-left:5px;" src="{% static 'images/logo1.jpg' %}" height="350px" width="250px" alt="logo1" class="img-fluid">
+                </a></h1>
+                <div class="nav_web-dealingsls">
+                    <nav>
+                        <ul class="menu">
+                            <li><a href="delboy_home">Home</a></li>
+                            <li><a href="#">View Order Details</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Update Delivery-Person Status -->
+<form action="" method="POST" style="margin-top:20px;">
+    {% csrf_token %}
+    <label for="d_status" style="margin-left:20px; font-size:20px;">Update Status: </label>
+    <select name="d_status">
+        <option value="available" {% if delivery_person.d_status == "available" %}selected{% endif %}>Available</option>
+        <option value="in-duty" {% if delivery_person.d_status == "in-duty" %}selected{% endif %}>In-Duty</option>
+        <option value="off-duty" {% if delivery_person.d_status == "off-duty" %}selected{% endif %}>Off-Duty</option>
+    </select>
+    <button type="submit">Update</button>
+</form>
+
+<!-- View Orders -->
+<div class="map-full">
+    <div class="contact-box">
+        <div class="container-fluid">
+            <table class="table table-stripped mt-5" border="2">
+                <thead>
+                    <tr style="background-color:lightgreen;">
+                        <th><center>Order Id</center></th>
+                        <th><center>Item</center></th>
+                        <th><center>Name</center></th>
+                        <th><center>Delivery Address</center></th>
+                        <th><center>Nearest Location</center></th>
+                        <th><center>Contact</center></th>
+                        <th><center>Payment</center></th>
+                        <th><center>Status</center></th>
+                        <th><center>Status Update</center></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in order %}
+                    <tr>
+                        <td style="color:blue;"><center><u>{{i.order_id}}</u></center></td>
+                        <td><center><img src="{{i.product.pro_img.url}}" height="90" width="90"></center></td>
+                        <td><center>{{i.customer.u_name}}</center></td>
+                        <td><center>{{i.customer.u_address}}<br>{{i.customer.u_city}},{{i.customer.u_district}}</center></td>
+                        <td><center>{{i.add_message}}</center></td>
+                        <td><center>{{i.customer.u_phno}}</center></td>
+                        <td><center><i style="color:gray;">Through</i><br>{{i.payment_mode}}</center></td>
+                        <td><center>{{i.status}}</center></td>
+                        <td>
+                            <form method="POST" action="statusup/{{i.id}}">
+                                {% csrf_token %}
+                                <select name="status">
+                                    <option value="Pending" {% if i.status == "Pending" %}selected{% endif %}>Pending</option>
+                                    <option value="Out for shipping" {% if i.status == "Out for shipping" %}selected{% endif %}>Out for shipping</option>
+                                    <option value="Delivered" {% if i.status == "Delivered" %}selected{% endif %}>Delivered</option>
+                                    <option value="Cancelled" {% if i.status == "Cancelled" %}selected{% endif %}>Cancelled</option>
+                                </select>
+                                <button type="submit">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Copyright -->
+    <div class="cpy-right text-center py-3" style="margin-top:50px;">
+        <p>© 2024 Quality Meats. All rights reserved | Design by <a href="#">Avani.V</a></p>
+    </div>
+
+    <!-- Move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </a>
+</body>
+</html>

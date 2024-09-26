@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+
+<head>
+    <title>Quality Fresh Meats Online-booking</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Fresh Meats" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Web-Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Razorpay checkout -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="{% static 'js/checkout.js' %}"></script>
+    <!-- Bootstrap JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        .text-font {
+            font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+            font-weight: 700;
+            letter-spacing: .156rem;
+        }
+
+        .text-price {
+            padding: 0 .625rem;
+            font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+            font-style: normal;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: .813rem;
+            letter-spacing: 1.6px;
+        }
+
+        .text-descriptions {
+            font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+            font-style: normal;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.125rem;
+            margin: .313rem 0 .938rem;
+            padding: 0 .625rem;
+        }
+
+        .button-color {
+            color: #4e4e4e;
+            border-color: #4e4e4e;
+        }
+
+        #rzp-button1{
+            font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+            font-style: normal;
+            font-size: 15px;
+            font-weight: 700;
+            background-color: hsl(90, 40%, 50%);
+            color: white;
+        }
+        #cod-button1{
+            font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+            font-style: normal;
+            font-size: 15px;
+            font-weight: 700;
+            background-color: hsl(30, 60%, 40%);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+ <!-- Page Details -->
+    <div class="breadcrumb-agile bg-light py-2">
+        <ol class="breadcrumb bg-light m-0">
+            <li class="breadcrumb-item">
+                <a href="../../userhome">Home</a>
+            </li>
+<!--            <li class="breadcrumb-item active" aria-current="page">Single-Booking</li>-->
+        </ol>
+    </div>
+
+    <!-- Single Order Page -->
+   <div class="container-fluid" style="padding-left:6%;padding-right:6%;padding-top:3%;">
+    <form action="{% url 'multiple_booking' %}" method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="ca">
+                            <h3 align="center">DELIVERY ADDRESS</h3>
+                            <br><br>
+                            <!-- Delivery Address -->
+                            <div class="card-body">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <label class="form-label">First name<span class="text-danger">*</span></label>
+                                        <input type="text" name="sofname" class="form-control" value="{{ data.u_name }}" required />
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Last name (Optional)</label>
+                                        <input type="text" class="form-control" name="solname" value="{{ data.lname}}" />
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="c_email_address" name="semail" value="{{ data.email }}" required readonly>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="text-black">Address <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" name="sadrs" value="{{ data.u_address }}" placeholder="Street address" required>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-sm-6">
+                                        <label class="text-black">District <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="sdistrict" value="{{ data.u_district}}" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-black">City <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="scity" value="{{ data.u_city }}" required>
+                                    </div>
+                                </div>
+                                <div class="row mb-4">
+                                    <div class="col-sm-6">
+                                        <label class="form-label">Contact number<span class="text-danger">*</span></label>
+                                        <input type="number" name="sphone" class="form-control" value="{{ data.u_phno }}" required />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="text-black">PinCode <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="spincode" value="{{ data.u_pincode }}" required>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="text-black">Order Notes (Optional)</label>
+                                    <input type="text" name="add_det" style="height:150px;" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery.">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Calculation -->
+                <div class="col-sm-7" style="margin-left:750px; margin-top:-600px;">
+                    <div class="card" style="border: 2px solid green;">
+                        <div class="card-body">
+                            <h3>PRICE DETAILS</h3>
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in pdata %}
+                                    <tr>
+                                        <td>{{ i.product_details.pro_name }}</td>
+                                        <td>{{ i.quantity }}</td>
+                                        <td>₹{{ i.product_details.price }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <hr>
+                            <div>
+                                <span>
+                                    <b style="margin-left:10px;">Shipping charges</b>
+                                    <b style="color:green; margin-left:230px;position:absolute;bottom:80px;">Free</b>
+                                </span>
+                            </div>
+                            <hr>
+                            <div>
+                                <span>
+                                    <b style="margin-left:10px;">TOTAL</b>
+                                    <b style="color:red; margin-left:305px;position:absolute;bottom:10px;">₹{{ t }}</b>
+                                </span>
+                            </div>
+                            <input type="hidden" value="{{ t }}" name="total">
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="payment-method">
+                        <input type="hidden" value="COD" name="payment_mode">
+                        <!-- Add the product_id hidden field here -->
+                        <input type="hidden" name="product_id" value="{{ product_id }}">
+                    </div>
+                    <button type="submit" id="cod-button1" class="btn btn-success btn-lg btn-block button-order">CASH ON DELIVERY</button>
+
+                    <br>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+    <script>
+        const form = document.querySelector('form');
+        const rzpButton = document.getElementById('rzp-button1');
+
+        rzpButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const rzp = new Razorpay({
+                "key": "{{ rzp_key }}",
+                "amount": document.querySelector('input[name="total"]').value * 100,
+                "currency": "INR",
+                "name": "Fresh Meats",
+                "description": "Test Transaction",
+                "image": "{%static 'images/logo1.jpg' %}",
+                "handler": function (response) {
+                    form.submit();
+                },
+                "prefill": {
+                    "name": "{{ data.u_name }}",
+                    "email": "{{ data.email }}",
+                    "contact": "{{ data.phonenumber }}"
+                },
+                "notes": {
+                    "address": "{{ data.address }}"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            });
+            rzp.open();
+        });
+    </script>
+<!--//single order page-->
+
+<!--online payment-->
+
+ <div class="container-fluid" style="padding-left:6%;padding-right:6%;padding-top:3%;">
+        <form action="../multiple_razor" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-8" hidden="hidden">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="ca">
+                                <br>
+                                <h3 align="center">DELIVERY ADDRESS</h3>
+                                <br><br>
+                                <!-- Delivery Address -->
+                                <div class="card-body">
+                                    <div class="row mb-4">
+                                        <div class="col">
+                                            <label class="form-label" >First name<span class="text-danger">*</span></label>
+                                            <input type="text" name="sofname" class="form-control" value="{{ data.u_name }}" required />
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label" for="form11Example2">Last name (Optional)</label>
+                                            <input type="text" id="form13Example1" class="form-control" name="solname" value="{{ data.lname }}" />
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label for="c_email_address" class="text-black">Email Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="c1_email_address" name="semail" value="{{ data.email }}" required readonly>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label  class="text-black">Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="sadrs" value="{{ data.u_address }}" placeholder="Street address" required>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-sm-6">
+                                            <label class="text-black">District <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="sdistrict" value="{{ data.u_district}}" required>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label class="text-black">City <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="scity" value="{{ data.u_city }}" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-sm-6">
+                                            <label class="form-label">Contact number<span class="text-danger">*</span></label>
+                                            <input type="number" name="sphone" class="form-control" value="{{ data.u_phno }}" required />
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label class="text-black">PinCode <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="spincode" value="{{ data.u_pincode }}" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="text-black">Order Notes (Optional)</label>
+                                        <input type="text" name="add_det" style="height:150px;" class="form-control" placeholder="Notes about your order, e.g. special notes for delivery.">
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+                        <!-- Product Card -->
+                        <div class="col-sm-4">
+                            <div class="card" style="background-color:#f3f3f3;">
+                                <img style="margin:18px;" src="{{pdata.pro_img.url}}" height="200px" width="225px">
+                                <div class="card-body">
+                                    <h5 class="card-title text-font">{{ pdata.pro_name }}</h5>
+                                    <h5 class="card-title text-price">₹{{ pdata.price }} /-</h5>
+                                    <input type="hidden" value="{{ pdata.price }}" name="amount">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Price Calculation -->
+                <div class="col-sm-7">
+                    <div class="card" style="border: 2px solid green;" hidden="hidden">
+                        <div class="card-body">
+                            <h3>PRICE DETAILS</h3>
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">Product Name</th>
+                                        <th scope="col">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ pdata.pro_name }}</td>
+                                        <td>₹{{ pdata.price }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shipping charges</td>
+                                        <td style="color:green;">Free</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>TOTAL</b></td>
+                                        <td><b>₹{{pdata.price}}</b></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <input type="hidden" value="{{ pdata.price}}" name="total">
+                        </div>
+                    </div>
+
+                    <br>
+<!--                    <input type="button" name="COD" hidden="hidden">-->
+<!--                    <button type="submit" id="cod-button1" class="btn btn-success btn-lg btn-block button-order">CASH ON DELIVERY</button>-->
+
+                    <br>
+                	<div class="payment-method">
+						<input type="hidden" value="Razorpay" name="payment_mode">
+					</div>
+
+                        <button type="submit" id="rzp-button1" class="btn btn-success btn-lg btn-block button-order" style="position:absolute;right:-473px;bottom:200px; width:465px;">PROCEED TO PAY</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        const form = document.querySelector('form');
+        const rzpButton = document.getElementById('rzp-button1');
+
+        rzpButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const rzp = new Razorpay({
+                "key": "{{ rzp_key }}",
+                "amount": document.querySelector('input[name="total"]').value * 100,
+                "currency": "INR",
+                "name": "Fresh Meats",
+                "description": "Test Transaction",
+                "image": "{%static 'images/logo1.jpg' %}",
+                "handler": function (response) {
+                    form.submit();
+                },
+                "prefill": {
+                    "name": "{{ data.u_name }}",
+                    "email": "{{ data.email }}",
+                    "contact": "{{ data.phonenumber }}"
+                },
+                "notes": {
+                    "address": "{{ data.address }}"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            });
+            rzp.open();
+        });
+    </script>
+<!--//online payment-->
+
+
+</body>
+</html>

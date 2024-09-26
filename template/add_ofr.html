@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>add offers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link href="{%static 'css/css_slider.css' %}" type="text/css" rel="stylesheet" media="all">
+	<!-- css slider -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+    <!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+<body>
+<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!-- login -->
+								<a href="home" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-in mr-2"></span>Logout</a>
+								<!-- //login -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1" >
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="">
+						<img style="padding-left:5px;" src="{%static 'images/logo1.jpg' %}" height="350px" width="250px" alt="logo1" class="img-fluid">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<ul class="menu">
+							<li><a href="admin_home">Home</a></li>
+							<li><a href="add_product">Add Product</a></li>
+							<li><a href="add_employee">Add Employee</a></li>
+							<li>
+								<!-- Second Tier Drop Down -->
+								<label for="drop-1" class="toggle toogle-2">Offer<span class="fa fa-angle-down" aria-hidden="true"></span></label>
+								<a href="#pages">Offer<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+								<input type="checkbox" id="drop-1" />
+								<ul>
+								<li><a href="add_offer">Add Offer Details</a></li>
+								<li><a href="view_offer">View Offer Details</a></li>
+								</ul>
+							</li>
+							<li>
+								<!-- First Tier Drop Down -->
+								<label for="drop-3" class="toggle toogle-2">View Details<span class="fa fa-angle-down"
+																							  aria-hidden="true"></span></label>
+								<a href="#pages">View Details<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+								<input type="checkbox" id="drop-3" />
+								<ul>
+									<li><a class="drop-text" href="view_user">View Users</a></li>
+									<li><a class="drop-text" href="view_employee">View Employees</a></li>
+									<li><a class="drop-text" href="view_delivery">View Delivery Persons</a></li>
+								</ul>
+							<li><a href="view_product">Product Details</a></li>
+							<li><a href="view_order">Order Details</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav-->
+			</div>
+		</div>
+	</div>
+	<!-- //navigation -->
+	<!-- //header2 -->
+
+	<!-- banner -->
+	<div>
+		<img src="{%static 'images/admin-bg-2.jpeg' %}" height="300px" width="1473px">
+	</div>
+	<!-- //banner -->
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="admin_home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Add Offer</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+<!-- message -->
+	{% if messages %}
+	<div class="container">
+		<div class="alert alert-success alert-dismissible messages">
+			{% for message in messages %}
+				<button type="button" class="close" data-dismiss="alert">🞭</button>
+			 {{message}}
+	  	</div>
+		 {% endfor %}
+	</div>
+	{% endif %}
+<!-- //message -->
+
+<!--add_offer-->
+{% block body %}
+
+<div class="map-full">
+	<div class="contact-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mt-4">
+					<div class="heading-title text-center">
+						<h1 style="margin-left:50px;">Add Offer Details</h1>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="row mt-5" style="margin-left:400px;">
+				<div class="col-lg-6">
+					<form id="contactForm" action="add_offer" method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" id="ofr_id" class="form-control" name="o_id" placeholder="Offer Id" required data-error="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="date" id="ofr_dt" class="form-control" name="o_date" placeholder="Offer Updating date" required data-error="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+                            <div class="col-md-12">
+								<div class="form-group">
+									<input type="file" id="ofr" class="form-control" name="o_img" placeholder="Offer Image" required data-error="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" id="ofr_exp" class="form-control" name="o_exp" placeholder="Offer Expiry" required data-error="">
+									<div class="help-block with-errors"></div>
+								</div>
+							</div>
+                        </div>
+						<div class="submit-button text-center mt-3 ml-5" style="padding-right:90px;">
+							<button class="btn btn-common btn-primary ml-5" id="submit" type="submit">Add Offer</button>
+							<div id="msgSubmit" class="h3 text-center hidden"></div>
+							<div class="clearfix"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock body %}
+<!--//add_offer-->
+
+	<!-- copyright -->
+	<div class="cpy-right text-center py-3" style="margin-top:20px;">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href="http://w3layouts.com"> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+</html>

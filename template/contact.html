@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{%load static%}
+
+<head>
+	<title>Tasty Burger Restaurants Category Bootstrap Responsive Web Template | Contact Us :: W3layouts</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Tasty Burger Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+	<style>
+		.home-testimonial{
+			background-color: #231834;
+			height: 380px;
+		}
+		.home-testimonial-bottom{
+			background-color: #f8f8f8;
+			transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+			margin-top: 20px;
+			margin-bottom: 0px;
+			position: relative;
+			height: 130px;
+			top: 190px;
+		}
+		.home-testimonial h3{
+			color: var(--orange);
+			font-size: 30px;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+		.home-testimonial h2{
+			color: white;
+			font-size: 28px;
+			font-weight: 700;
+		}
+		.testimonial-inner{
+			position: relative;
+			top: -174px;
+			}
+		.testimonial-pos{
+			position: relative;
+			top: 24px;
+		}
+		.testimonial-inner .tour-desc{
+			border-radius: 5px;
+			padding: 40px;
+		}
+		.color-grey-3{
+			font-family: "Montserrat", Sans-serif;
+			font-size: 14px;
+			color: #6c83a2;
+		}
+		.testimonial-inner img.tm-people{
+			width: 60px;
+			height: 60px;
+			-webkit-border-radius: 50%;
+			border-radius: 50%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			max-width: none;
+		}
+		.link-name{
+			font-family: "Montserrat", Sans-serif;
+			font-size: 14px;
+			color: #6c83a2;
+		}
+		.link-position{
+			font-family: "Montserrat", Sans-serif;
+			font-size: 12px;
+			color: #6c83a2;
+		}
+		.feedback-empty {
+			text-align: center;
+			margin-top: 50px;
+		}
+
+		.feedback-empty img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.feedback-section {
+			margin-top: 50px;
+			padding: 30px 0;
+		}
+
+		.feedback-title {
+			font-size: 1.5rem;
+			color: #333;
+		}
+
+		.feedback-subtitle {
+			font-size: 2rem;
+			color: #555;
+		}
+
+		.feedback-list {
+			margin-top: 20px;
+		}
+
+		.feedback-item {
+			background-color: #f9f9f9;
+			border-radius: 8px;
+			padding: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.feedback-content {
+			padding: 15px;
+			border-radius: 5px;
+		}
+
+		.feedback-message {
+			font-size: 1.125rem;
+			color: #666;
+			margin: 0;
+		}
+
+		.feedback-author {
+			margin-top: 10px;
+		}
+
+		.feedback-name {
+			font-size: 1.125rem;
+			color: #333;
+			margin: 0;
+		}
+
+		.feedback-email {
+			font-size: 1rem;
+			color: #888;
+			margin: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- header -->
+	<header id="home">
+		<!-- top-bar -->
+		<div class="top-bar py-2 border-bottom">
+			<div class="container">
+				<div class="row middle-flex">
+					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+						<div class="row">
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-map-marker mr-2"></span>Cochin, Kerala
+								</p>
+							</div>
+							<div class="col-xl-3 col-6 header-top_w3layouts">
+								<p class="text-da">
+									<span class="fa fa-phone mr-2"></span>+91 9605932427
+								</p>
+							</div>
+							<div class="col-xl-6"></div>
+						</div>
+					</div>
+					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+						<div class="row middle-flex">
+							<div class="col-lg-12 col-4 top-w3layouts p-md-0 text-right">
+								<!-- login -->
+								<a href="login" class="btn login-button-2 text-uppercase text-wh">
+									<span class="fa fa-sign-in mr-2"></span>Login</a>
+								<!-- //login -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //top-bar -->
+
+	<!-- header 2 -->
+	<!-- navigation -->
+	<div class="main-top py-1">
+		<div class="container">
+			<div class="nav-content">
+				<!-- logo -->
+				<h1>
+					<a id="logo" class="logo" href="home">
+						<img src="{%static 'images/logo1.jpg' %}" alt="logo" class="img-fluid" height="350px" width="250px">
+					</a>
+				</h1>
+				<!-- //logo -->
+				<!-- nav -->
+				<div class="nav_web-dealingsls">
+					<nav>
+						<label for="drop" class="toggle">Categories</label>
+						<input type="checkbox" id="drop" />
+						<ul class="menu">
+							<li><a href="home">Home</a></li>
+							<li><a href="home">About Us</a></li>
+<!--							<li><a class="drop-text" href="offers">Special Offers</a></li>-->
+							<li><a href="category">Categories</a></li>
+							<li><a href="contact">Contact / Feedback</a></li>
+						</ul>
+					</nav>
+				</div>
+				<!-- //nav -->
+			</div>
+		</div>
+	</div>
+	<!-- //navigation -->
+	<!-- //header 2 -->
+
+	<!-- banner -->
+	<div class="main-banner-2">
+		<img src="{%static 'images/meat-bg1.png' %}" height="300px" width="1473px">
+	</div>
+	<!-- //banner -->
+	<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light m-0">
+			<li class="breadcrumb-item">
+				<a href="home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+
+	<!-- contact -->
+	<section class="ab-info-main py-5" id="contact">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="title-section text-center mb-md-5 mb-4">
+				<h3 class="w3ls-title mb-3">Contact <span>Us</span></h3>
+				<p class="titile-para-text mx-auto">Reach out and let's meat up! </p>
+				<p class="titile-para-text mx-auto">Contact us for all your carnivorous cravings.</p>
+			</div>
+			<div class="row contact-agileinfo pt-lg-4">
+				<!-- contact address -->
+				<div class="col-md-5 address">
+					<h3 class="footer-title mb-4 pb-lg-2">Our Address</h3>
+					<div class="row address-info-w3ls">
+						<div class="col-3 address-left">
+							<img src="{%static 'images/c-1.png' %}" height="50px" width="50px" alt="c1" class="img-fluid">
+						</div>
+						<div class="col-9 address-right mt-2">
+							<h5 class="address mb-2">Address</h5>
+							<p>Cochin, Kerala</p>
+						</div>
+					</div>
+					<div class="row address-info-w3ls my-2">
+						<div class="col-3 address-left">
+							<img src="{%static 'images/c-2.png' %}" height="50px" width="50px" alt="c2" class="img-fluid">
+						</div>
+						<div class="col-9 address-right mt-2">
+							<h5 class="address mb-2">Email</h5>
+							<p>
+								<a href="mailto:baconbonanza.meatshop@gmail.comm">baconbonanza.meatshop@gmail.com</a>
+							</p>
+						</div>
+					</div>
+					<div class="row address-info-w3ls">
+						<div class="col-3 address-left">
+							<img src="{%static 'images/c-3.jpeg' %}" height="50px" width="50px" alt="c3" class="img-fluid">
+						</div>
+						<div class="col-9 address-right mt-2">
+							<h5 class="address mb-2">Phone</h5>
+							<p>+91 9605932427</p>
+						</div>
+					</div>
+				</div>
+				<!-- //contact address -->
+				<!-- Feedback Form -->
+				{% if not data %}
+					<section class="feedback-empty">
+						<img src="{% static 'images/empty_feedback.png' %}" alt="No Feedback Available">
+						<p>No feedback available at the moment.</p>
+					</section>
+				{% else %}
+					<section class="feedback-section">
+						<div class="container">
+							<div class="text-center mb-4">
+								<h3 class="feedback-title">FEEDBACK</h3>
+								<h2 class="feedback-subtitle">Explore the User Experience</h2>
+							</div>
+							<div class="feedback-list">
+								{% for i in data %}
+								<div class="feedback-item">
+									<div class="feedback-content bg-light">
+										<p class="feedback-message">&ldquo;{{ i.message }}&rdquo;</p>
+									</div>
+									<div class="feedback-author text-center">
+										<h4 class="feedback-name">{{ i.name }}</h4>
+										<p class="feedback-email">{{ i.email }}</p>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+						</div>
+					</section>
+				{% endif %}
+				<!-- // Feedback Form -->
+			</div>
+		</div>
+	</section>
+	<!-- contact -->
+	<!-- map -->
+	<section class="map">
+		<iframe
+			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.919611368934!2d76.25032051465446!3d10.011245892827962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b083193c5b1d5c1%3A0x55f0fd6e09e33309!2sKochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1647330846305!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</section>
+	<!-- //map -->
+
+	<!-- footer -->
+	<footer class="py-5">
+		<div class="container py-xl-4">
+			<div class="row footer-top">
+				<div class="col-lg-4 footer-grid_section_1its footer-text">
+					<!-- logo -->
+					<h2>
+						<a class="logo text-wh" href="">
+							<img src="{%static 'images/logo.jpg' %}" height="200px" width="100px" alt="logo" class="img-fluid"><span>Quality</span> Meats
+						</a>
+					</h2>
+					<!-- //logo -->
+					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">Quality meats are characterized by their tenderness,
+						succulence, and superior flavor profile.</p>
+					<!-- social icons -->
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Contact Us</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Address : ABC Building, Kadavanthra, Cochin, Eranakulam, Kerala</p>
+						<p class="my-2">Phone : +91 9605932427</p>
+						<p>Email : <a href="mailto:baconbonanza.meatshop@gmail.com">baconbonanza.meatshop@gmail.comm</a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3>Payment Method</h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="login"><img src="{%static 'images/cod_image.png' %}" alt="py1" height="25px" width="100px"></a>
+						</li>
+						<li>
+							<a href="login."><img src="{%static 'images/razorpay_image.png' %}" alt="py2" height="25px"></a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its">
+					<div class="footer-title">
+						<h3>Services</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Free Shipping</p>
+						<p>24/7 Support</p>
+						<p>Cash On Delivery & Online Payment Available</p>
+						<p>No Return/Refund Policies</p>
+						<p>Quality Assurance</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<!-- copyright -->
+	<div class="cpy-right text-center py-3">
+		<p>© 2024 Quality Meats. All rights reserved | Design by
+			<a href=""> Avani.V</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center">
+		<span class="fa fa-level-up" aria-hidden="true"></span>
+	</a>
+	<!-- //move top icon -->
+
+</body>
+
+</html>

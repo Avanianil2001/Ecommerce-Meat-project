@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot password</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Fresh Meats" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+
+	<!-- Custom-Files -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
+	<!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link href="{%static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom-Files -->
+
+	<!-- Web-Fonts -->
+	<link
+		href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext"
+		rel="stylesheet">
+	<link
+		href="//fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<!-- //Web-Fonts -->
+
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<!-- page details -->
+	<div class="breadcrumb-agile bg-light py-2">
+		<ol class="breadcrumb bg-light mt-2" style="margin-left:20px;">
+			<li class="breadcrumb-item">
+				<a href="../home">Home</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">Forgot Password</li>
+		</ol>
+	</div>
+	<!-- //page details -->
+<!--forgot password-->
+
+<section class="bg-light p-3 p-md-4 p-xl-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xxl-11">
+                <div class="card border-light-subtle shadow-sm">
+                    <div class="row g-0">
+                        <div class="col-12 col-md-6">
+                            <img class="img-fluid rounded-start object-fit-cover" loading="lazy" src="{%static 'images/forgot-password-concept.jpg' %}" alt="Welcome back you've been missed!">
+                        </div>
+                        <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
+                            <div class="col-12 col-lg-11 col-xl-10">
+                                <div class="card-body p-3 p-md-4 p-xl-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-5">
+                                                <div class="text-center mb-4">
+                                                    <a href="#">
+                                                        <img src="{%static 'images/logo1.jpg' %}" alt="forgot password" width="175" height="90">
+                                                    </a>
+                                                </div>
+                                                <h2 class="h4 text-center">FORGOT PASSWORD</h2>
+                                                <h4 class="fs-6 fw-normal text-secondary text-center m-0">Provide the email address associated with your account to recover your password.</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <form action="{% url 'forgot' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="row gy-3 overflow-hidden">
+                                            <div class="col-12">
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter your registered Email address" required>
+                                                    <label for="email" class="form-label">Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="d-grid">
+                                                    <button class="btn btn-dark btn-lg" type="submit">Send Mail</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--//forgot password-->
+
+</body>
+</html>
+
